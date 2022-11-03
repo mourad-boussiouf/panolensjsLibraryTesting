@@ -52,7 +52,7 @@
     return a;
   };
 
-document.querySelectorAll('.chaptersButtons').forEach(chapterButton =>
+window.querySelectorAll('.chaptersButtons').forEach(chapterButton =>
   chapterButton.addEventListener("click", () => {
     switch (chapterButton.attributes[1].value) {
       case 'piece1':
