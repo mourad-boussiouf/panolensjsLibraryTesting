@@ -3,16 +3,16 @@
     container: document.querySelector('#viewer'),
   });
 
-  let piece1 = new PANOLENS.ImagePanorama('../images/pano1.jpeg');
+  let piece1 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/pano1.jpeg');
 
   //add 1er globe au viewer
   viewer.add(piece1);
 
-  let piece2 = new PANOLENS.ImagePanorama('../images/pano2.jpeg');
+  let piece2 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/pano2.jpeg');
 
   viewer.add(piece2);
 
-  let piece3 = new PANOLENS.ImagePanorama('../images/pano3.jpeg')
+  let piece3 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/pano3.jpeg')
 
   viewer.add(piece3);
 
