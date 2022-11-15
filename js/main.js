@@ -55,16 +55,15 @@ const viewer = new PANOLENS.Viewer({
 
 document.querySelectorAll('.chaptersButtons').forEach(chapterButton =>
  chapterButton.addEventListener("click", () => {
-   console.log(typeof chapterButton.className);
-   viewer.setPanorama(piece3);
-   switch (chapterButton.className) {
-     case 'chaptersButtons piece1':
+  console.log(chapterButton.attributes[1].value);
+   switch (chapterButton.attributes[1].value) {
+     case 'piece1':
        viewer.setPanorama(piece1);
        break;
-     case 'chaptersButtons piece2':
+     case 'piece2':
        viewer.setPanorama(piece2);
        break;
-     case 'chaptersButtons piece3':
+     case 'piece3':
        viewer.setPanorama(piece3);
        break;
    }
