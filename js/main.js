@@ -15,6 +15,8 @@ const viewer = new PANOLENS.Viewer({
 
  viewer.add(piece3);
 
+
+ 
  //infospot1 alert
  let new_infospot1 = new PANOLENS.Infospot(200, PANOLENS.DataImage.Info);
  new_infospot1.position.set(1500, -800, -2000);

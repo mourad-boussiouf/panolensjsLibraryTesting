@@ -14,7 +14,7 @@ body{
 #viewer{
     position: absolute;
     background-color: rgb(255, 0, 0);
-    height: 54.5%;
+    height: 56%;
     width: 55%;
     top: 10%;
     left: 21.5%;
@@ -45,7 +45,7 @@ html, body {
     justify-content: space-evenly;
     position: absolute;
     z-index: 9999;
-    margin-left: 29.6%;
+    margin-left: 28%;
     margin-top: 610px;
     width: 41%;
     height: 3px;
