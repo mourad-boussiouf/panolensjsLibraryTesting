@@ -1,4 +1,3 @@
-//15 dec a 10h
 
 
 const viewer = new PANOLENS.Viewer({
