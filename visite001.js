@@ -1,6 +1,5 @@
 //15 dec a 10h
 
-
 const viewer = new PANOLENS.Viewer({
     container: document.querySelector('#viewer'),
     controlBar: true,
@@ -24,55 +23,19 @@ const viewer = new PANOLENS.Viewer({
    }
  }
  
- let objectLengthA = 10;
- let objectLengthB = 2;
- 
- /* for (let i = 1; i < objectLengthA; i++) {
-   console.log("COMPTEUR1",i);
-   window['pieceA'+i] = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite001/IMG_A'+i+'.jpg');
-   viewer.add(eval('pieceA'+i));
- }
- for (let i = 1; i < objectLengthB; i++) {
-   console.log("COMPTEUR2",i);
-   window['pieceB'+i] = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite001/IMG_B'+i+'.jpg');
-   viewer.add(eval('pieceB'+i));
- } */
-  let pieceA1 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_001.jpg');
-  viewer.add(pieceA1);
- 
-  let pieceA2 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_002.jpg');
-  viewer.add(pieceA2);
- 
-  let pieceA3 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_003.jpg');
-  viewer.add(pieceA3);
- 
-  let pieceA4 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_006.jpg'); 
-  viewer.add(pieceA4);
- 
-  let pieceA5 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_007.jpg'); 
-  viewer.add(pieceA5);
- 
-  let pieceA6 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_008.jpg');
-  viewer.add(pieceA6);
- 
-  let pieceA7 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_009.jpg');
-  viewer.add(pieceA7);
- 
-  let pieceA8 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_010.jpg'); 
-  viewer.add(pieceA8);
- 
-  let pieceA9 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_012.jpg'); 
-  viewer.add(pieceA9);
- 
-  let pieceA10 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_013.jpg'); 
-  viewer.add(pieceA10);
- 
-  let pieceB1 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_004.jpg');
-  viewer.add(pieceB1);
- 
-  let pieceB2 = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite002/IMG_005.jpg'); 
-  viewer.add(pieceB2);
-  
+//generation pano et ajouts au viewer
+let objectLengthA = 10;
+let objectLengthB = 3;
+ for (let i = 1; i < objectLengthA; i++) {
+  window['pieceA'+i] = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite001/IMG_A'+i.toString()+'.jpg');
+  eval('pieceA'+i).addEventListener('progress', addLoading);
+  viewer.add(eval('pieceA'+i));
+}
+for (let i = 1; i < objectLengthB; i++) {
+  window['pieceB'+i] = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite001/IMG_B'+i.toString()+'.jpg');
+  eval('pieceB'+i).addEventListener('progress', addLoading);
+  viewer.add(eval('pieceB'+i));
+} 
  
  viewer.getControl = function () {
    this.control.noKeys = true;
@@ -417,6 +380,6 @@ const viewer = new PANOLENS.Viewer({
  /* element.addEventListener("click", () => {
     document.piece1.click()
  }); */
-  if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-    viewer.enableControl(PANOLENS.CONTROLS.DEVICEORIENTATION);
-    document.getElementById('loadxyz').className = "1";
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+  viewer.enableControl(PANOLENS.CONTROLS.DEVICEORIENTATION);
+  document.getElementById('loadxyz').className = "1";
