@@ -347,7 +347,6 @@ const viewer = new PANOLENS.Viewer({
   //sortie piece B
   pieceB2.link(pieceB1, new THREE.Vector3(5000, -1005, 370),); */
  
-  //console position
   window.addEventListener('click', (event) => {
    getPosition()
    console.log(getPosition());
