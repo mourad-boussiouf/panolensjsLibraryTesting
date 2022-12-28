@@ -412,9 +412,6 @@ const viewer = new PANOLENS.Viewer({
  
  setInterval(consolelogdashboard, 150);
  
- /* element.addEventListener("click", () => {
-    document.piece1.click()
- }); */
   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
     viewer.enableControl(PANOLENS.CONTROLS.DEVICEORIENTATION);
     document.getElementById('loadxyz').className = "1";
