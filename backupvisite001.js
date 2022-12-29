@@ -370,7 +370,6 @@ const viewer = new PANOLENS.Viewer({
    console.log(viewer.getCamera().rotation)
  };
  
- //changements panos par "barre de chapitres"
  document.querySelectorAll('.whiteCircle').forEach(chapterButton =>
   chapterButton.addEventListener("click", () => {
     switch (chapterButton.innerText) {
