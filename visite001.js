@@ -366,7 +366,6 @@ for (let i = 1; i < objectLengthB; i++) {
    setLook(initialLookAt);
  }, 50);
  
- let az = Math.atan2(5000, 100) * 180 / Math.PI;
  
  function consolelogdashboard() {
  let azimuth = viewer.getControl().getAzimuthalAngle();
