@@ -11,7 +11,9 @@ let startX, startY;
 function startDrawing(event) {
   isDrawing = true;
   startX = event.clientX - canvas.offsetLeft;
+  startX = event.clientX - canvas.offsetRight;
   startY = event.clientY - canvas.offsetTop;
+  startX = event.clientX - canvas.offsetBottom;
 }
 
 function draw(event) {
