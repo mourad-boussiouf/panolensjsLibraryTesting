@@ -11,4 +11,4 @@ function transition(fromPanorama, toPanorama, duration) {
   
   var fovKeys = [{ frame: 0, value: camera.fov }, { frame: duration, value: toPanorama.fov }];
   fovAnimation.setKeys(fovKeys);
-  var alphaKeys =
+  var alphaKeys = yawAxisQuarter;
