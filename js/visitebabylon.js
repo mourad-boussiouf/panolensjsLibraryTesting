@@ -29,7 +29,7 @@ var panoramaTextures = [
   }
   
   window.addEventListener("keydown", function(event) {
-    if (event.keyCode === 38) { 
+    if (event.key === "arrowDown") { 
       changePanorama();
     }
   });
