@@ -36,7 +36,7 @@ function openModal() {
     captionText.innerHTML = dots[slideIndex-1].alt;
   }
   
-  /* document.getElementById("lightboxthumb1").addEventListener( 'click', () => {
+  document.getElementById("lightboxthumb1").addEventListener( 'click', () => {
     openModal(); currentSlide(1);
   });
   document.getElementById("lightboxthumb2").addEventListener( 'click', () => {
@@ -44,7 +44,7 @@ function openModal() {
   });
   document.getElementById("lightboxthumb3").addEventListener( 'click', () => {
     openModal(); currentSlide(3);
-  }); */
+  }); 
   document.getElementById("prevslide").addEventListener( 'click', () => {
     plusSlides(-1);
   });
