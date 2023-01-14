@@ -24,7 +24,7 @@ const viewer = new PANOLENS.Viewer({
  }
  
 //generation pano et ajouts au viewer
-let objectLengthA = 15;
+let objectLengthA = 11;
 let objectLengthB = 3;
  for (let i = 1; i < objectLengthA; i++) {
   window['pieceA'+i] = new PANOLENS.ImagePanorama('https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite001/IMG_A'+i.toString()+'.jpg');
