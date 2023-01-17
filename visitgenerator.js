@@ -19,7 +19,7 @@ function startDrawing(event) {
 function draw(event) {
   if (isDrawing) {
     ctx.beginPath();
-    ctx.moveTo(startX, startY);
+    ctx.moveTo(startX, startY, startZ);
     ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
     ctx.stroke();
   }
