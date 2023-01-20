@@ -25,6 +25,7 @@ const viewer = new PANOLENS.Viewer({
 
  piece3.link(piece4, new THREE.Vector3(2723, -5000, -1737),);
 
+ piece4.link(piece4, new THREE.Vector3(2723, -5000, -1737),);
 
 
  //sorties
