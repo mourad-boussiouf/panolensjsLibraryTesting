@@ -128,6 +128,14 @@ for (let i = 1; i < objectLengthB; i++) {
    left: null,
    right: null
  }
+
+ let pieceB3nodes= {
+  forward: null,
+  down: "pieceB1",
+  left: null,
+  right: null
+}
+
  
  let masterNode = pieceA1nodes;
  let currentNode = masterNode;
