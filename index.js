@@ -56,4 +56,3 @@ async function loadAll() {
       resolve("ok");
     });
   }
-}
