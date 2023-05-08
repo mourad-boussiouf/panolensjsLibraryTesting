@@ -139,7 +139,7 @@
   let panolandIsRunning = false;
 
 
-    await loadAll()
+    loadAll();
     let piece1 = {
       title: "piece1",
       imgUrl:
@@ -150,25 +150,25 @@
       imgUrl:
         "https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite001/IMG_B1.jpg",
     };
-    this.dataPano.push(piece1, piece2);
-    console.log(this.dataPano);
+    dataPano.push(piece1, piece2);
+    console.log(dataPano);
   
 
 
     async function loadAll() {
-    await this.threeload();
-    await this.panoload();
-    await this.loadScript();
-    this.panolandIsRunning = true;
+    await threeload();
+    await panoload();
+    await loadScript();
+    panolandIsRunning = true;
   }
 
   async function  callStackHandler() {
     return await new Promise((res) => setTimeout(res, 0));
   }
   async function  b(c) {
-    await this.callStackHandler();
+    await callStackHandler();
     if (document.getElementById(c).className !== "1") {
-      await this.b(c);
+      await b(c);
     } else if (document.getElementById(c).className === "1") {
       return new Promise((resolve) => {
         resolve("ok");
@@ -177,38 +177,47 @@
   }
 
   async function  showthumbnails(index) {
-    this.currentThumnail = index;
+    currentThumnail = index;
   }
 
   async function  threeload() {
+    console.log("toto1")
     let threeLoader = document.createElement("script");
     threeLoader.setAttribute(
       "src",
       "https://cdn.jsdelivr.net/gh/mourad-boussiouf/prototypemodulevisit3D/js/three.min.js"
     );
     document.head.appendChild(threeLoader);
-    await this.b("loadefg");
+    await b("loadefg");
     return new Promise((resolve) => {
       resolve("ok");
     });
   }
 
   async function  panoload() {
+    console.log("toto2")
     let panolensLoader = document.createElement("script");
     panolensLoader.setAttribute(
       "src",
       "https://cdn.jsdelivr.net/gh/mourad-boussiouf/prototypemodulevisit3D/js/panolens.min.js"
     );
     document.head.appendChild(panolensLoader);
-    await this.b("loadklm");
+    await b("loadklm");
     return new Promise((resolve) => {
       resolve("ok");
     });
   }
 
-  async function  loadScript() {
-    require("./visite004.js");
-    await this.b("loadxyz");
+  async function loadScript() {
+    console.log("toto3")
+    let VisitLoader = document.createElement("script");
+    VisitLoader.setAttribute(
+      "src",
+      "./Visite1POC.js"
+    );
+    document.head.appendChild(VisitLoader);
+    //require("./visite004.js");
+    await b("loadxyz");
     return new Promise((resolve) => {
       resolve("ok");
     });
