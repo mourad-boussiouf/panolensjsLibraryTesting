@@ -186,7 +186,7 @@ function openModal() {
   var previousLookAt = new THREE.Vector3(0, 0, 0);
   let masterNode = pieceA1nodes;
   let currentNode = masterNode;
-  updateMovingButtons();
+
   
   let azToDegCorrected = 0;
   let yawAxisQuarter = 1;
@@ -195,6 +195,7 @@ function openModal() {
   let minRight=140;
   let minUp=210;
   let minLeft=330;
+  updateMovingButtons();
   
   function updateMovingButtons() {
     //de dos

@@ -104,13 +104,13 @@
                 @mouseenter="showthumbnails(index)"
                 @mouseleave="currentThumnail = null"
               >
-                {{ element.title }}
+                
               </div>
               <div
                 class="titlePano"
                 :style="{ opacity: currentThumnail === index ? 1 : 0 }"
               >
-                {{ element.title }}
+                
               </div>
               <img
                 class="thumbnailPano"
@@ -137,7 +137,7 @@
     var sphericalHeadingIndicatorValue = 0;
     var showSphericalHeadingIndicator = false;
   
-     panolandIsRunning: boolean = false;
+    var panolandIsRunning = false;
 
       loadAll();
       let piece1 = {
@@ -150,24 +150,24 @@
         imgUrl:
           "https://cdn.jsdelivr.net/gh/mourad-boussiouf/panolensjsLibraryTesting/images/visite001/IMG_B1.jpg",
       };
-      this.dataPano.push(piece1, piece2);
-      console.log(this.dataPano);
+      dataPano.push(piece1, piece2);
+      
     
 
      async function loadAll() {
-      await this.threeload();
-      await this.panoload();
-      await this.loadScript();
-      this.panolandIsRunning = true;
+      await threeload();
+      await panoload();
+      await loadScript();
+      var panolandIsRunning = true;
     }
   
     async function callStackHandler() {
       return await new Promise((res) => setTimeout(res, 0));
     }
     async function b(c) {
-      await this.callStackHandler();
+      await callStackHandler();
       if (document.getElementById(c).className !== "1") {
-        await this.b(c);
+        await b(c);
       } else if (document.getElementById(c).className === "1") {
         return new Promise((resolve) => {
           resolve("ok");
@@ -175,9 +175,10 @@
       }
     }
   
-     showthumbnails(index) {
-      this.currentThumnail = index;
-    }
+     function showthumbnails(index) {
+      currentThumnail = index;
+     }
+    
   
     async function threeload() {
       let threeLoader = document.createElement("script");
@@ -186,7 +187,7 @@
         "https://cdn.jsdelivr.net/gh/mourad-boussiouf/prototypemodulevisit3D/js/three.min.js"
       );
       document.head.appendChild(threeLoader);
-      await this.b("loadefg");
+      await b("loadefg");
       return new Promise((resolve) => {
         resolve("ok");
       });
@@ -199,15 +200,21 @@
         "https://cdn.jsdelivr.net/gh/mourad-boussiouf/prototypemodulevisit3D/js/panolens.min.js"
       );
       document.head.appendChild(panolensLoader);
-      await this.b("loadklm");
+      await b("loadklm");
       return new Promise((resolve) => {
         resolve("ok");
       });
     }
   
     async function loadScript() {
-      require("../assets/files/visite001.js");
-      await this.b("loadxyz");
+        console.log("toto3")
+    let VisitLoader = document.createElement("script");
+    VisitLoader.setAttribute(
+      "src",
+      "./Visite1POC.js"
+    );
+    document.head.appendChild(VisitLoader);
+      await b("loadxyz");
       return new Promise((resolve) => {
         resolve("ok");
       });
@@ -215,15 +222,20 @@
   
   </script>
   <style lang="scss">
-  #viewer {
-    position: absolute;
-    background-color: rgba(46, 46, 46, 0.714);
-    height: 51%;
-    width: 85%;
-    top: 10%;
-    left: 7.5%;
-  }
-  
+#viewer {
+  position: absolute;
+  background-color: rgba(46, 46, 46, 0.714);
+  height: 51%;
+  width: 85%;
+  top: 10%;
+  left: 7.5%;
+}
+
+#viewer canvas {
+    width: 100% !important;
+    height: auto !important;  
+}
+
   .relative {
     position: relative !important;
   }
@@ -412,9 +424,6 @@
     border-bottom: 9.5px solid white;
     border-left: 10.5px solid transparent;
     margin: 0px auto 1px auto;
-    &:hover {
-      opacity: 1;
-    }
   }
 
   .arrowGlobeRight:hover{
@@ -436,14 +445,11 @@
     position: absolute;
     margin-left: 37.5px;
     margin-top: 7px;
-    &:hover {
-      opacity: 1;
-    }
   }
 
   .arrowGlobeRight:hover{
     opacity: 1; 
-}
+    }
 
   
   .arrowGlobeLeft {
@@ -459,16 +465,12 @@
     border-bottom: 10.5px solid transparent;
     margin-left: -10px;
     margin-top: 7px;
-    &:hover {
-      opacity: 1;
-    }
   }
 
-  .arrowGlobeRight:hover{
+  .arrowGlobeLeft:hover{
     opacity: 1; 
-}
+  }
 
-  
   .arrowGlobeDown {
     cursor: pointer;
     position: absolute;
@@ -482,16 +484,12 @@
     border-bottom: 9.5px solid white;
     border-left: 10.5px solid transparent;
     margin: auto;
-    &:hover {
-      opacity: 1;
-    }
   }
 
-  .arrowGlobeRight:hover{
+  .arrowGlobeDown:hover{
     opacity: 1; 
-}
+    }
 
-  //classes CSS utilisées pour le loading
   #progress {
     position: absolute;
     z-index: 999;
